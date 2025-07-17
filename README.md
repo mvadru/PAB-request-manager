@@ -20,10 +20,7 @@ __Prerequisites__
 1. Clone the Repository `git clone https://github.com/mvadru/PAB-request-manager.git`
 2. change directory: `cd PAB-request-manager`
 3. Install Dependencies: 'npm install'
-4. Configure Credentials Create a file named secrets.txt in the root of the project directory. This file is listed in .gitignore and will not be committed to source control. Add your Palo Alto Networks SASE API credentials to this file:
-  `TSG_ID=your_tsg_id_here
-  CLIENT_ID=your_client_id_here
-  CLIENT_SECRET=your_client_secret_here`
+4. Configure Credentials edit the file secrets.txt in the root of the project directory to include your API credentials.
 6. Start the application server. `npm start`
 
 
