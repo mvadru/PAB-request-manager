@@ -1,0 +1,114 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f7f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+header {
+    background-color: #0072ce;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+.controls button {
+    background-color: #fff;
+    color: #0072ce;
+    border: 1px solid #0072ce;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-left: 10px;
+    transition: all 0.2s ease-in-out;
+}
+.controls button:hover {
+    background-color: #e6f1f9;
+}
+#statusMessage {
+    text-align: center;
+    padding: 40px;
+    font-size: 1.1em;
+    color: #777;
+}
+.request-card {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+}
+.request-card:last-child {
+    border-bottom: none;
+}
+.request-card.pending {
+    background-color: #fffbe6;
+}
+.request-info h3 {
+    margin: 0 0 5px 0;
+    color: #005a9e;
+}
+.request-info p {
+    margin: 4px 0;
+    font-size: 0.9em;
+    color: #555;
+}
+.request-info .reason {
+    font-style: italic;
+    margin-top: 10px;
+}
+.request-meta {
+    font-size: 0.9em;
+    color: #666;
+}
+.request-actions button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 10px;
+    transition: opacity 0.2s;
+}
+.request-actions button:hover {
+    opacity: 0.85;
+}
+.approve-btn {
+    background-color: #28a745;
+    color: white;
+}
+.decline-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Add this to the end of public/style.css */
+
+.custom-duration-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: 5px;
+}
+
+.custom-duration-group input {
+    width: 60px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}

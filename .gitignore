@@ -1,0 +1,11 @@
+# Ignore the node modules folder, as it can be regenerated from package.json
+node_modules
+
+# Ignore the file containing secret credentials
+secrets.txt
+
+# Ignore environment files
+.env
+
+# Ignore system files
+.DS_Store
