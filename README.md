@@ -1,11 +1,33 @@
 # SASE Web Request Manager
 
-A simple Node.js web application for viewing and managing user web access requests from the Palo Alto Networks SASE platform. It provides a clean interface to approve or decline pending requests.FeaturesView Requests: Displays a list of all user web access requests, including the user, website, reason, and time.Filter by Status: Toggle between viewing only "pending" requests and all requests.Approve/Decline Actions: Quickly approve or decline pending requests directly from the interface.Flexible Approval Durations:Approve for a single access ("Once").Approve for a preset duration ("10 minutes").Approve for a custom duration specified in minutes.Auto-Refresh: The request list automatically refreshes every 30 seconds to show new requests.Secure Backend: Uses a Node.js server to securely handle API authentication and protect credentials.Setup and InstallationFollow these steps to get the application running on your local machine.PrerequisitesNode.js (LTS version recommended)npm (comes bundled with Node.js)1. Clone the RepositoryIf you have published the project to GitHub, clone your repository. Otherwise, ensure you have the project files in a local directory.git clone https://github.com/your-username/sase-request-manager.git
-cd sase-request-manager
-2. Install DependenciesNavigate to the project's root directory and install the required Node.js packages.npm install
-3. Configure CredentialsCreate a file named secrets.txt in the root of the project directory. This file is listed in .gitignore and will not be committed to source control.Add your Palo Alto Networks SASE API credentials to this file:TSG_ID=your_tsg_id_here
-CLIENT_ID=your_client_id_here
-CLIENT_SECRET=your_client_secret_here
-4. Configure the API EndpointOpen the server.js file and ensure the API_BASE_URL constant is set to the correct URL for your SASE region (e.g., https://api-amer.sase.paloaltonetworks.com).UsageOnce the setup is complete, you can start the application server.Start the Server:npm start
-You should see a confirmation message in your terminal: Server running at http://localhost:3000.Access the Application:Open your web browser and navigate to:http://localhost:3000The web interface will load, fetch the requests, and be ready for use.
+A simple Node.js web application for viewing and managing user web access requests from the Palo Alto Networks SASE platform. It provides a clean interface to approve or decline pending requests.
+## Features
+
+- __View Requests:__ Displays a list of all user web access requests, including the user, website, reason, and time.
+- __Filter by Status:__ Toggle between viewing only "pending" requests and all requests.
+- __Approve/Decline Actions:__ Quickly approve or decline pending requests directly from the interface.
+- __Flexible Approval Durations:__ Approve for a single access ("Once").Approve for a preset duration ("10 minutes").
+- __Auto-Refresh:__ The request list automatically refreshes every 30 seconds to show new requests.
+- __Secure Backend:__ Uses a Node.js server to securely handle API authentication and protect credentials.
+
+## Setup and Installation
+Follow these steps to get the application running on your local machine.
+
+__Prerequisites__
+- Node.js (LTS version recommended)
+- npm (comes bundled with Node.js)
+  
+1. Clone the Repository `git clone https://github.com/mvadru/PAB-request-manager.git`
+2. change directory: `cd PAB-request-manager`
+3. Install Dependencies: 'npm install'
+4. Configure Credentials Create a file named secrets.txt in the root of the project directory. This file is listed in .gitignore and will not be committed to source control. Add your Palo Alto Networks SASE API credentials to this file:
+  `TSG_ID=your_tsg_id_here
+  CLIENT_ID=your_client_id_here
+  CLIENT_SECRET=your_client_secret_here`
+6. Start the application server. `npm start`
+
+
+You should see a confirmation message in your terminal: Server running at `http://localhost:3000`
+To access the application, open your web browser and navigate to: `http://localhost:3000`
+The web interface will load, fetch the requests, and be ready for use.
 
