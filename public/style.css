@@ -96,6 +96,10 @@ header h1 {
     background-color: #dc3545;
     color: white;
 }
+.revoke-btn {
+    background-color: #dc7935;
+    color: white;
+}
 
 /* Add this to the end of public/style.css */
 

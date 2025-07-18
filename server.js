@@ -140,7 +140,6 @@ app.post('/api/requests/:id/action', async (req, res) => {
         if (action === 'approve') {
             body.adminBypassTimeframe = duration.toString();
         }
-        console.log(body);
 
         const apiResponse = await fetch(`${API_BASE_URL}/seb-api/v1/user-requests/${id}/action`, {
             method: 'POST',
@@ -151,7 +150,38 @@ app.post('/api/requests/:id/action', async (req, res) => {
             body: JSON.stringify(body),
         });
 
-        //console.log(apiResponse);
+        if (!apiResponse.ok) {
+            const errorText = await apiResponse.text();
+            throw new Error(`API Action Error: ${apiResponse.status} - ${errorText}`);
+        }
+        
+        // Return 204 No Content for success, as the API does
+        res.status(204).send();
+
+    } catch (error) {
+        res.status(500).json({ error: 'Failed to perform action.', message: error.message });
+    }
+});
+
+// Endpoint to revoke an approved request
+app.post('/api/requests/:id/revoke', async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const token = await getAccessToken();
+        //const body = { action };
+
+        const apiResponse = await fetch(`${API_BASE_URL}/seb-api/v1/user-requests/${id}/revoke`, {
+
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                "revokerComment": "Revoked via API"
+            }),
+        });
 
         if (!apiResponse.ok) {
             const errorText = await apiResponse.text();
